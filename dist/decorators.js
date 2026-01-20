@@ -1,6 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InjectValue = exports.Inject = exports.Factory = exports.Scoped = exports.OnlyInstantiableByContainer = exports.Singleton = exports.InRequestScope = void 0;
+exports.InRequestScope = InRequestScope;
+exports.Singleton = Singleton;
+exports.OnlyInstantiableByContainer = OnlyInstantiableByContainer;
+exports.Scoped = Scoped;
+exports.Factory = Factory;
+exports.Inject = Inject;
+exports.InjectValue = InjectValue;
 require("reflect-metadata");
 const container_1 = require("./container/container");
 const model_1 = require("./model");
@@ -23,7 +29,6 @@ const model_1 = require("./model");
 function InRequestScope(target) {
     container_1.IoCContainer.bind(target).scope(model_1.Scope.Request);
 }
-exports.InRequestScope = InRequestScope;
 /**
  * A decorator to tell the container that this class should be handled by the Singleton [[Scope]].
  *
@@ -43,7 +48,6 @@ exports.InRequestScope = InRequestScope;
 function Singleton(target) {
     container_1.IoCContainer.bind(target).scope(model_1.Scope.Singleton);
 }
-exports.Singleton = Singleton;
 /**
  * A decorator to tell the container that this class should has its instantiation always handled by the Container.
  *
@@ -67,7 +71,6 @@ exports.Singleton = Singleton;
 function OnlyInstantiableByContainer(target) {
     return container_1.IoCContainer.bind(target).instrumentConstructor().decoratedConstructor;
 }
-exports.OnlyInstantiableByContainer = OnlyInstantiableByContainer;
 /**
  * A decorator to tell the container that this class should be handled by the provided [[Scope]].
  * For example:
@@ -96,7 +99,6 @@ function Scoped(scope) {
         container_1.IoCContainer.bind(target).scope(scope);
     };
 }
-exports.Scoped = Scoped;
 /**
  * A decorator to tell the container that this class should instantiated by the given [[ObjectFactory]].
  * For example:
@@ -119,7 +121,6 @@ function Factory(factory) {
         container_1.IoCContainer.bind(target).factory(factory);
     };
 }
-exports.Factory = Factory;
 /**
  * A decorator to request from Container that it resolve the annotated property dependency.
  * For example:
@@ -155,7 +156,6 @@ function Inject(...args) {
     }
     throw new TypeError('Invalid @Inject Decorator declaration.');
 }
-exports.Inject = Inject;
 /**
  * A decorator to request from Container that it resolve the annotated property dependency
  * with a constant value.
@@ -193,7 +193,6 @@ function InjectValue(value) {
         throw new TypeError('Invalid @InjectValue Decorator declaration.');
     };
 }
-exports.InjectValue = InjectValue;
 /**
  * Decorator processor for [[Inject]] decorator on properties
  */

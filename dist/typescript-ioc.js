@@ -5,7 +5,7 @@
  * Visit the project page on [GitHub] (https://github.com/thiagobustamante/typescript-ioc).
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Container = exports.Scope = exports.BuildContext = void 0;
+exports.Container = exports.InjectValue = exports.InRequestScope = exports.OnlyInstantiableByContainer = exports.Scoped = exports.Singleton = exports.Factory = exports.Inject = exports.Scope = exports.BuildContext = void 0;
 require("reflect-metadata");
 const model_1 = require("./model");
 Object.defineProperty(exports, "Scope", { enumerable: true, get: function () { return model_1.Scope; } });

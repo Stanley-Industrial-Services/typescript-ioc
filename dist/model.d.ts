@@ -44,7 +44,7 @@ export declare abstract class Scope {
 /**
  * A factory for instances created by the Container. Called every time an instance is needed.
  */
-export declare type ObjectFactory = (context?: BuildContext) => Object;
+export type ObjectFactory = (context?: BuildContext) => Object;
 /**
  * The context of the current Container resolution.
  */

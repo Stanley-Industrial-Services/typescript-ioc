@@ -99,7 +99,7 @@ class IoCBindValueConfig {
     to(value) {
         if (this.path) {
             this.value = this.value || {};
-            lodash_1.set(this.value, this.path, value);
+            (0, lodash_1.set)(this.value, this.path, value);
         }
         else {
             this.value = value;
@@ -108,7 +108,7 @@ class IoCBindValueConfig {
     }
     getValue() {
         if (this.path) {
-            return lodash_1.get(this.value, this.path);
+            return (0, lodash_1.get)(this.value, this.path);
         }
         return this.value;
     }
