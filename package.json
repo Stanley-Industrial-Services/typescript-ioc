@@ -5,7 +5,7 @@
   "author": "Thiago da Rosa de Bustamante <trbustamante@gmail.com>",
   "scripts": {
     "start": "tsc -w",
-    "build": "npm run clean && tsc",
+    "build": "tsc",
     "clean": "rimraf dist",
     "prepare": "rimraf dist && tsc",
     "lint": "tslint ./src/**/*.ts ./test/**/*.ts",
@@ -15,14 +15,13 @@
     "tsc": "tsc"
   },
   "dependencies": {
-    "lodash.get": "^4.4.2",
-    "lodash.set": "^4.3.2",
-    "reflect-metadata": "^0.1.13"
+    "lodash": "^4.17.21",
+    "reflect-metadata": "^0.2.2"
   },
   "devDependencies": {
     "@types/jest": "^26.0.0",
-    "@types/lodash.get": "^4.4.6",
-    "@types/lodash.set": "^4.3.6",
+    "@types/lodash.get": "^4.4.9",
+    "@types/lodash.set": "^4.3.9",
     "@types/node": "^8.10.61",
     "codecov": "^3.7.0",
     "jest": "^26.1.0",
